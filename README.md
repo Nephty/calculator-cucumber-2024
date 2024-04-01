@@ -7,6 +7,7 @@ Code quality: ![Maven Build](https://github.com/Nephty/calculator-cucumber-2024/
 
 Test coverage: ![Coverage](.github/badges/jacoco.svg)
 ![Branches](.github/badges/branches.svg)
+[![codecov](https://codecov.io/gh/Nephty/calculator-cucumber-2024/branch/master/graph/badge.svg)]()
 
 
 # Calculating arithmetic expressions
