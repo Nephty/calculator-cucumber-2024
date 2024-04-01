@@ -1,8 +1,8 @@
-package visitor;
+package back.visitor;
 
-import calculator.MyNumber;
-import calculator.Notation;
-import calculator.Operation;
+import back.calculator.MyNumber;
+import back.calculator.Notation;
+import back.calculator.Operation;
 
 import java.util.stream.IntStream;
 

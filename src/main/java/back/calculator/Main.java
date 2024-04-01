@@ -1,4 +1,9 @@
-package calculator;
+package back.calculator;
+
+import back.logging.LoggerHelper;
+
+import java.io.IOException;
+import java.util.logging.Logger;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -13,6 +18,7 @@ import java.util.List;
  * @author tommens
  */
 public class Main {
+    public static final Logger logger = Logger.getLogger(Main.class.getName());
 
     /**
      * This is the main method of the application.
@@ -20,7 +26,8 @@ public class Main {
      *
      * @param args Command-line parameters are not used in this version
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        String logFilePath = LoggerHelper.prepareLogger(logger);
 
         Expression e;
         Calculator c = new Calculator();

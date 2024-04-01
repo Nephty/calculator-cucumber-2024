@@ -1,6 +1,6 @@
-package calculator;
+package back.calculator;
 
-import visitor.Visitor;
+import back.visitor.Visitor;
 
 import java.util.ArrayList;
 import java.util.List;

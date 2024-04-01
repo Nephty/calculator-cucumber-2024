@@ -1,6 +1,6 @@
-package calculator;
+package back.calculator;
 
-import visitor.*;
+import back.visitor.*;
 
 /**
  * This class represents the core logic of a Calculator.

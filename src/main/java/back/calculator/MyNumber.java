@@ -1,6 +1,6 @@
-package calculator;
+package back.calculator;
 
-import visitor.Visitor;
+import back.visitor.Visitor;
 
 /**
  * MyNumber is a concrete class that represents arithmetic numbers,

@@ -2,6 +2,9 @@ package calculator;
 
 //Import Junit5 libraries for unit testing:
 
+import back.calculator.IllegalConstruction;
+import back.calculator.MyNumber;
+import back.calculator.Times;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
