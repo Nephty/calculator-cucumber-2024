@@ -21,8 +21,8 @@ import java.util.logging.*;
 
 /**
  * Class that holds all required methods in order to ensure a proper logging process.
- * Log files are stored at <user.home>/.logs/calculator-cucumber/. On Unix, <user.home> will be /home/<username>.
- * On Windows, <user.home> will be <your_disk>\Users\<username>, where <your_disk> is the disk where Windows is
+ * Log files are stored at [user.home]/.logs/calculator-cucumber/. On Unix, [user.home] will be /home/[username].
+ * On Windows, [user.home] will be [your_disk]\Users\[username], where [your_disk] is the disk where Windows is
  * installed. Each log file will be named by their date and time of creation.
  */
 public class LoggerHelper {
@@ -145,7 +145,7 @@ public class LoggerHelper {
 
     /**
      * Reads the content of the log file at the given path.
-     * Will close the initial <log> tag on its own if called before it was properly closed by the logger itself
+     * Will close the initial [log] tag on its own if called before it was properly closed by the logger itself
      * (for example when we try to read the logs before stopping the program).
      * @return Its content as a string
      */
