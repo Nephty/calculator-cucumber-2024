@@ -3,6 +3,9 @@ package calculator;
 //Import Junit5 libraries for unit testing:
 
 import back.calculator.*;
+import back.calculator.operators.Minus;
+import back.calculator.operators.Times;
+import back.calculator.types.MyNumber;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -14,8 +17,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class TestMinus {
 
-    private final int value1 = 8;
-    private final int value2 = 6;
+    private static final int value1 = 8;
+    private static final int value2 = 6;
     private Minus op;
     private List<Expression> params;
 

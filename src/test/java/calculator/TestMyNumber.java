@@ -3,8 +3,8 @@ package calculator;
 //Import Junit5 libraries for unit testing:
 
 import back.calculator.IllegalConstruction;
-import back.calculator.MyNumber;
-import back.calculator.Times;
+import back.calculator.types.MyNumber;
+import back.calculator.operators.Times;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class TestMyNumber {
 
-    private final int value = 8;
+    private static final int value = 8;
     private MyNumber number;
 
     @BeforeEach

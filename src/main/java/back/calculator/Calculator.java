@@ -1,6 +1,9 @@
 package back.calculator;
 
+import back.calculator.types.MyNumber;
+import back.calculator.types.NotANumber;
 import back.visitor.*;
+
 
 /**
  * This class represents the core logic of a Calculator.
@@ -9,14 +12,11 @@ import back.visitor.*;
  * @author tommens
  */
 public class Calculator {
-    /*
-     For the moment the calculator only contains a print method and an eval method
-     It would be useful to complete this with a read method, so that we would be able
-     to implement a full REPL cycle (Read-Eval-Print loop) such as in Scheme, Python, R and other languages.
-     To do so would require to implement a method with the following signature, converting an input string
-     into an arithmetic expression:
-     public Expression read(String s)
-    */
+    private final ExpressionParser parser;
+
+    public Calculator() {
+        parser = new ExpressionParser();
+    }
 
     /**
      * Prints an arithmetic expression provided as input parameter.
@@ -58,6 +58,14 @@ public class Calculator {
         e.accept(v);
         // and return the result of the evaluation at the end of the process
         return v.getResult();
+    }
+
+    public Expression read(String s) {
+        try {
+            return parser.parse(s);
+        } catch (IllegalConstruction illegalConstruction) {
+            return new NotANumber();
+        }
     }
 
     /*

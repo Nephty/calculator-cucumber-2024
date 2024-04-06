@@ -1,0 +1,7 @@
+.context-menu {
+    -fx-background-color: grey;
+    -fx-background-radius: 10px;
+    -fx-text-fill: white;
+    -fx-background-insets: 2px;
+    -fx-padding: 5 5 5 5;
+}

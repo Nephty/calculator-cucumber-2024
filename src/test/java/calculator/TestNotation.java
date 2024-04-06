@@ -1,6 +1,11 @@
 package calculator;
 
 import back.calculator.*;
+import back.calculator.operators.Divides;
+import back.calculator.operators.Minus;
+import back.calculator.operators.Plus;
+import back.calculator.operators.Times;
+import back.calculator.types.MyNumber;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -17,7 +22,7 @@ class TestNotation {
      */
     void testNotation(String s, Operation o, Notation n) {
         assertEquals(s, o.toString(n));
-        o.notation = n;
+        o.setNotation(n);
         assertEquals(s, o.toString());
     }
 

@@ -1,11 +1,11 @@
 package back.visitor;
 
 import back.calculator.Expression;
-import back.calculator.MyNumber;
+import back.calculator.types.MyNumber;
 import back.calculator.Operation;
 
 public class Mathematician extends Visitor {
-    private int numbersCount = 0;
+    private int numbersCount;
 
     /**
      * Use the visitor design pattern to visit a number.

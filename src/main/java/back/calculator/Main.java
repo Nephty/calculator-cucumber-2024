@@ -1,13 +1,14 @@
 package back.calculator;
 
 import back.logging.LoggerHelper;
+import back.calculator.types.MyNumber;
+import back.calculator.operators.*;
 
 import java.io.IOException;
-import java.util.logging.Logger;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.logging.Logger;
 
 /**
  * A very simple calculator in Java

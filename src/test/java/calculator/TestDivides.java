@@ -3,6 +3,10 @@ package calculator;
 //Import Junit5 libraries for unit testing:
 
 import back.calculator.*;
+import back.calculator.operators.Divides;
+import back.calculator.operators.Times;
+import back.calculator.types.MyNumber;
+import back.calculator.types.NotANumber;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -14,8 +18,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class TestDivides {
 
-    private final int value1 = 8;
-    private final int value2 = 6;
+    private static final int value1 = 8;
+    private static final int value2 = 6;
     private Divides op;
     private List<Expression> params;
 
@@ -24,7 +28,7 @@ class TestDivides {
         params = Arrays.asList(new MyNumber(value1), new MyNumber(value2));
         try {
             op = new Divides(params);
-            op.notation = Notation.INFIX; // reset the notation to infix (which is the default) before each test
+            op.setNotation(Notation.INFIX); // reset the notation to infix (which is the default) before each test
         } catch (IllegalConstruction e) {
             fail();
         }
@@ -62,7 +66,7 @@ class TestDivides {
     @SuppressWarnings("ConstantConditions")
     @Test
     void testNull() {
-        assertDoesNotThrow(() -> op == null); // Direct way to to test if the null case is handled.
+        assertDoesNotThrow(() -> op == null); // Direct way to test if the null case is handled.
     }
 
     @Test

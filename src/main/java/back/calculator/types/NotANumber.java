@@ -1,4 +1,4 @@
-package back.calculator;
+package back.calculator.types;
 
 
 /**

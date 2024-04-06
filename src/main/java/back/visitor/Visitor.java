@@ -1,6 +1,6 @@
 package back.visitor;
 
-import back.calculator.MyNumber;
+import back.calculator.types.MyNumber;
 import back.calculator.Operation;
 
 /**

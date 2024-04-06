@@ -1,11 +1,11 @@
 package back.visitor;
 
 import back.calculator.Expression;
-import back.calculator.MyNumber;
+import back.calculator.types.MyNumber;
 import back.calculator.Operation;
 
 public class Logician extends Visitor {
-    private int operationsCount = 0;
+    private int operationsCount;
 
     /**
      * Use the visitor design pattern to visit a number.
@@ -14,6 +14,7 @@ public class Logician extends Visitor {
      */
     @Override
     public void visit(MyNumber n) {
+        // Visiting a number does not increase the depth
     }
 
     /**

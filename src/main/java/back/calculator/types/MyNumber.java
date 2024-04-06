@@ -1,5 +1,7 @@
-package back.calculator;
+package back.calculator.types;
 
+import back.calculator.Expression;
+import back.calculator.Operation;
 import back.visitor.Visitor;
 
 /**

@@ -1,9 +1,11 @@
 package back.calculator;
 
+import back.calculator.types.MyNumber;
 import back.visitor.Visitor;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Stream;
 
 /**
@@ -17,7 +19,7 @@ public abstract class Operation implements Expression {
     /**
      * The list of expressions passed as an argument to the arithmetic operation
      */
-    public List<Expression> args;
+    private final List<Expression> args;
 
     /**
      * The character used to represent the arithmetic operation (e.g. "+", "*")
@@ -29,11 +31,12 @@ public abstract class Operation implements Expression {
      */
     protected int neutral;
 
+
     /**
      * The notation used to render operations as strings.
      * By default, the infix notation will be used.
      */
-    public Notation notation = Notation.INFIX;
+    private Notation notation = Notation.INFIX;
 
     /**
      * It is not allowed to construct an operation with a null list of expressions.
@@ -72,6 +75,23 @@ public abstract class Operation implements Expression {
      */
     public List<Expression> getArgs() {
         return args;
+    }
+
+    /**
+     * Getter method to return the notation used to represent the operation.
+     *
+     * @return The notation used to represent the operation.
+     */
+    public Notation getNotation() {
+        return notation;
+    }
+
+    /**
+     * Setter method to set the notation used to represent the operation.
+     * @param n The notation to be used to represent the operation.
+     */
+    public void setNotation(Notation n) {
+        notation = n;
     }
 
     /**
@@ -126,17 +146,30 @@ public abstract class Operation implements Expression {
     public final String toString(Notation n) {
         Stream<String> s = args.stream().map(Object::toString);
         return switch (n) {
-            case INFIX -> "( " +
-                    s.reduce((s1, s2) -> s1 + " " + symbol + " " + s2).get() +
-                    " )";
-            case PREFIX -> symbol + " " +
-                    "(" +
-                    s.reduce((s1, s2) -> s1 + ", " + s2).get() +
-                    ")";
-            case POSTFIX -> "(" +
-                    s.reduce((s1, s2) -> s1 + ", " + s2).get() +
-                    ")" +
-                    " " + symbol;
+            case INFIX -> {
+                Optional<String> val = s.reduce((s1, s2) -> s1 + " " + symbol + " " + s2);
+                if (val.isPresent()) {
+                    yield "( " + val.get() + " )";
+                } else {
+                    yield symbol; // Should never happen
+                }
+            }
+            case PREFIX -> {
+                Optional<String> val = s.reduce((s1, s2) -> s1 + ", " + s2);
+                if (val.isPresent()) {
+                    yield symbol + " (" + val.get() + ")";
+                } else {
+                    yield symbol;
+                }
+            }
+            case POSTFIX -> {
+                Optional<String> val = s.reduce((s1, s2) -> s1 + ", " + s2);
+                if (val.isPresent()) {
+                    yield "(" + val.get() + ") " + symbol;
+                } else {
+                    yield symbol;
+                }
+            }
         };
     }
 
@@ -168,7 +201,8 @@ public abstract class Operation implements Expression {
      */
     @Override
     public int hashCode() {
-        int result = 5, prime = 31;
+        int result = 5;
+        int prime = 31;
         result = prime * result + neutral;
         result = prime * result + symbol.hashCode();
         result = prime * result + args.hashCode();
@@ -177,6 +211,7 @@ public abstract class Operation implements Expression {
 
     /**
      * Symbol getter.
+     *
      * @return the symbol of the operation
      */
     public String getSymbol() {

@@ -1,7 +1,7 @@
 package back.visitor;
 
 import back.calculator.Expression;
-import back.calculator.MyNumber;
+import back.calculator.types.MyNumber;
 import back.calculator.Operation;
 
 import java.util.ArrayList;
@@ -45,7 +45,7 @@ public class Evaluator extends Visitor {
     public void visit(Operation o) {
         ArrayList<MyNumber> evaluatedArgs = new ArrayList<>();
         //first loop to recursively evaluate each subexpression
-        for (Expression a : o.args) {
+        for (Expression a : o.getArgs()) {
             a.accept(this);
             evaluatedArgs.add(computedValue);
         }

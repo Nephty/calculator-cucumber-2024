@@ -1,13 +1,13 @@
 package back.visitor;
 
 import back.calculator.Expression;
-import back.calculator.MyNumber;
+import back.calculator.types.MyNumber;
 import back.calculator.Operation;
 
 import java.util.ArrayList;
 
 public class Diver extends Visitor {
-    private int depth = 0;
+    private int depth;
 
     /**
      * Use the visitor design pattern to visit a number.
