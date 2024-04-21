@@ -1,6 +1,7 @@
 back.calculator
 back.calculator.operators
 back.calculator.types
+back.converter
 back.parser
 back.visitor
 front.controllers
