@@ -9,6 +9,8 @@ Test coverage: ![Coverage](.github/badges/jacoco.svg)
 ![Branches](.github/badges/branches.svg)
 [![codecov](https://codecov.io/gh/Nephty/calculator-cucumber-2024/branch/master/graph/badge.svg)](https://codecov.io/gh/Nephty/calculator-cucumber-2024)
 
+[![Javadoc](https://img.shields.io/badge/JavaDoc-Online-green)](https://nephty.github.io/calculator-cucumber-2024/javadoc/)
+
 
 
 # Calculating arithmetic expressions
