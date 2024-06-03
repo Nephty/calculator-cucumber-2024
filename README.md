@@ -29,7 +29,7 @@ The BDD scenarios are specified as .feature files in the src\test\resources dire
 
 ### Prerequisites
 
-*  You will need to have a running version of Java 21 on your machine in order to be able to compile and execute this code, although it is also backward compatible with earlier versions of Java.
+*  You will need to have a running version of Java 17 on your machine in order to be able to compile and execute this code, although it is also backward compatible with earlier versions of Java.
 *  You will need to have a running version of Maven, since this project is accompanied by a pom.xml file so that it can be installed, compiled, tested and run using Maven.
 
 ### Installation and testing instructions
@@ -57,11 +57,18 @@ The BDD scenarios are specified as .feature files in the src\test\resources dire
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/tommens/calculator-cucumber/tags). 
 
-## Contributors
+## Base Contributors
 
 * Tom Mens
 * Gauvain Devillez @GauvainD
 * Damien Legay @DamienLegay
+
+## Contributors of this fork
+
+* Thomas Bernard
+* Moreau Arnaud
+* Moreau Cyril
+* Vion François
 
 ## Licence
 
