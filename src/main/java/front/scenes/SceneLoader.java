@@ -28,8 +28,9 @@ public final class SceneLoader {
      * @return the Scene that was created from the FXML file
      */
     public static Scene load(String sceneName) {
-        if (!sceneName.endsWith(".fxml")) sceneName += ".fxml";
-        URL url = App.class.getResource("/xml/scenes/" + sceneName);
+        String updatedSceneName = sceneName;
+        if (!updatedSceneName.endsWith(".fxml")) updatedSceneName += ".fxml";
+        URL url = App.class.getResource("/xml/scenes/" + updatedSceneName);
         FXMLLoader fxmlLoader = new FXMLLoader(url);
         try {
             Parent sceneParent = fxmlLoader.load();

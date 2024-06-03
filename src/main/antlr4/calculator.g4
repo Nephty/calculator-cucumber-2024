@@ -13,9 +13,13 @@ expression: infix
 
 imNumber: cartesian | polar | exponential;
 
+angle: atom
+    | atom op='/' atom
+    ;
+
 cartesian: real=atom op=('+' | '-') im=atom? I;
-polar: r=atom '*'? '(' COS '(' theta1=atom ')' '+' I SIN '(' theta2=atom ')' ')';
-exponential: r=atom '*'? EXP '(' theta=atom I ')';
+polar: r=atom '*'? '(' COS '(' theta1=angle  ')' '+' I SIN '(' theta2=angle ')' ')';
+exponential: r=atom '*'? EXP '(' theta=angle I ')';
 
 // With ANTLR, precedence is determined by the order of the rules
 infix: ((MODULUS infix MODULUS) | ('modulus' '(' infix ')')) # ModulusInfix

@@ -3,7 +3,7 @@ package back.converter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Units {
+public final class Units {
     private Units() {
         throw new IllegalStateException("Utility class");
     }

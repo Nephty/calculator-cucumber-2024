@@ -194,7 +194,7 @@ class TestRational {
     }
 
     @Test
-    void myNumberToReal(){
+    void testMyNumberToReal(){
         MyNumber realNumber = new MyNumber(new RealValue(new BigDecimal(5)));
         MyNumber result = realNumber.convertToReal();
         assertEquals(realNumber, result);
@@ -217,6 +217,16 @@ class TestRational {
         MyNumber expected3 = new MyNumber(new RealValue(new BigDecimal(0.5)));
         MyNumber result5 = rationalNumber.convertToReal();
         assertEquals(expected3, result5);
+    }
+
+    @Test
+    void testHashcode(){
+        RationalValue r = new RationalValue(new IntValue(1), new IntValue(2));
+        RationalValue r2 = new RationalValue(new IntValue(1), new IntValue(2));
+        assertEquals(r.hashCode(), r2.hashCode());
+
+        RationalValue r3 = new RationalValue(new IntValue(1), new IntValue(3));
+        assertNotEquals(r.hashCode(), r3.hashCode());
     }
 
 }

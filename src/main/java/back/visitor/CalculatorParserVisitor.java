@@ -89,8 +89,12 @@ public class CalculatorParserVisitor extends calculatorBaseVisitor<Expression> {
     @Override
     public Expression visitPolar(calculatorParser.PolarContext ctx) {
         AbstractValue modulus = getValueFromAtom(ctx.r);
-        AbstractValue arg1 = getValueFromAtom(ctx.theta1);
-        AbstractValue arg2 = getValueFromAtom(ctx.theta2);
+
+        MyNumber val1 = (MyNumber) visit(ctx.theta1);
+        MyNumber val2 = (MyNumber) visit(ctx.theta2);
+
+        AbstractValue arg1 = val1.getReal();
+        AbstractValue arg2 = val2.getReal();
         if (!arg1.equals(arg2)) {
             LOGGER.warn("The two angles are different. Please check the input. {} != {}", arg1, arg2);
             return new NotANumber();
@@ -105,10 +109,26 @@ public class CalculatorParserVisitor extends calculatorBaseVisitor<Expression> {
     public Expression visitExponential(calculatorParser.ExponentialContext ctx) {
         // Same as polar in this case
         AbstractValue modulus = getValueFromAtom(ctx.r);
-        AbstractValue argument = getValueFromAtom(ctx.theta);
+        MyNumber val = (MyNumber) visit(ctx.theta);
+        AbstractValue argument = val.getReal();
         MyNumber res = new MyNumber(modulus.mul(argument.cos()), modulus.mul(argument.sin()));
         res.setForm(ComplexForm.EXPONENTIAL);
         return res;
+    }
+
+
+    @Override
+    public Expression visitAngle(calculatorParser.AngleContext ctx) {
+        AbstractValue val1 = getValueFromAtom(ctx.atom(0));
+
+        AbstractValue res = val1;
+        if (ctx.op != null) {
+            AbstractValue val2 = getValueFromAtom(ctx.atom(1));
+
+            res = val1.div(val2);
+        }
+        return new MyNumber(res);
+
     }
 
     // ================================= INFIX =============================================

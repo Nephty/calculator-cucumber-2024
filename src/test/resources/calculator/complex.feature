@@ -193,5 +193,9 @@ Feature: Complex arithmetic expressions
     Given the following expression '5.6569(cos(0.7854)+isin(2))'
     Then its parsing is 'NaN'
 
+  Scenario: Parsing a polar with pi angle
+    Given the following expression '5.6569(cos(pi/4)+isin(pi/4))'
+    Then its parsing is '5.657(cos(0.7854)+isin(0.7854))'
+
 
 

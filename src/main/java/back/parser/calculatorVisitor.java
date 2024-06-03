@@ -31,6 +31,12 @@ public interface calculatorVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitImNumber(calculatorParser.ImNumberContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link calculatorParser#angle}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAngle(calculatorParser.AngleContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link calculatorParser#cartesian}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

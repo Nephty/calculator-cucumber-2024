@@ -17,7 +17,7 @@ import java.util.Map;
  * meter in the case of distance) and then converts the result into the request unit. This avoids repetitive factors
  * declarations.
  */
-public class Converter {
+public final class Converter {
     /**
      * Holds the conversion factors from all speed units to all speed units.
      */

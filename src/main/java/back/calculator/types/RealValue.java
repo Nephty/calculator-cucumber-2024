@@ -139,8 +139,7 @@ public class RealValue extends AbstractValue{
      */
     @Override
     public AbstractValue exp() {
-        double eDouble = Math.E;
-        BigDecimal eValue = new BigDecimal(BigDecimal.valueOf(eDouble).pow(this.value.intValue()).longValueExact(), this.precision);
+        BigDecimal eValue = new BigDecimal(Double.toString(Math.exp(this.value.intValue())), this.precision);
         return new RealValue(eValue);
     }
 

@@ -35,8 +35,8 @@ public class App extends Application {
 
     private static String userInput = "";
 
-    public final static String BASIC_MODE = "Basic";
-    public final static String CONVERSION_MODE = "Conversion";
+    public static final String BASIC_MODE = "Basic";
+    public static final String CONVERSION_MODE = "Conversion";
 
     private static final Logger LOGGER = LoggerFactory.getLogger(App.class);
 
@@ -45,7 +45,7 @@ public class App extends Application {
      */
     private static MathContext precision = new MathContext(5);
 
-    private static final Calculator calculator = new Calculator();
+    private static final Calculator CALCULATOR = new Calculator();
 
     public static void main(String[] args) {
         LOGGER.info("Starting the application");
@@ -55,7 +55,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage s) {
-        stage = s;
+        stage = s; // NOSONAR
         stage.setResizable(false);
         stage.setTitle("Amazing Calculator");
         setScene(Scenes.MAIN_SCENE);
@@ -81,7 +81,7 @@ public class App extends Application {
     }
 
     public static Expression evalUserInput() {
-        return calculator.eval(calculator.read(App.userInput));
+        return CALCULATOR.eval(CALCULATOR.read(App.userInput));
     }
 
     public static String getUserInput() {
