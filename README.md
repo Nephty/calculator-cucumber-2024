@@ -17,7 +17,12 @@ Test coverage: ![Coverage](.github/badges/jacoco.svg)
 
 ## About
 
-This repository contains Java code for computing arithmetic expressions. It is deliberately incomplete as it serves to be the basis of all kinds of extensions, such as a more sophisticated Calculator application. The code was written to be used for educational purposes at the University of Mons, Belgium in the context of the software evolution course.
+This repository contains Java code for computing arithmetic expressions. The base code was deliberately incomplete as it served to be the basis of all kinds of extensions, such as a more sophisticated Calculator application. The base code was written to be used for educational purposes at the University of Mons, Belgium in the context of the software evolution course. This fork is the implementation of four features added on top of the base code. These features are :
+
+- support for complex numbers,
+- support for rational numbers,
+- support for real numbers and
+- conversion of units.
 
 
 ### Unit testing and BDD
@@ -36,7 +41,7 @@ The BDD scenarios are specified as .feature files in the src\test\resources dire
 
 *  Upon first use of the code in this repository, you will need to run "mvn clean install" to ensure that all required project dependencies (e.g. for Java, JUnit, Cucumber, and Maven) will be downloaded and installed locally.
 *  Assuming you have a sufficiently recent version of Maven installed (the required versions are specified as properties in the POM file), you can compile the source code using "mvn compile"
-*  Once the code is compiled, you can execute the main class of the Java code using "mvn exec:java" 
+*  Once the code is compiled, you can execute the main class of the Java code using "mvn javafx:run" 
 *  The tests and BDD scenarios are executable with Maven using "mvn test"
 *  Note that the tests are also executed when you do a "mvn install". It is possible to skip those tests by providing an extra parameter. For details of more advanced uses of Maven, please refer to its official documentation https://maven.apache.org/guides/.
 
@@ -57,11 +62,18 @@ The BDD scenarios are specified as .feature files in the src\test\resources dire
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/tommens/calculator-cucumber/tags). 
 
-## Contributors
+## Base Contributors
 
 * Tom Mens
 * Gauvain Devillez @GauvainD
 * Damien Legay @DamienLegay
+
+## Contributors of this fork
+
+* Thomas Bernard
+* Moreau Arnaud
+* Moreau Cyril
+* Vion François
 
 ## Licence
 
